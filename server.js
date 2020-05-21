@@ -5,10 +5,7 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env
-const mongoUri = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}`
-
-mongoose.connect(mongoUri, {
+mongoose.connect('process.env.DB_STRING', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
