@@ -5,10 +5,10 @@ const app = express();
 
 require('dotenv').config();
 
-mongoose.connect('process.env.DB_STRING', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(process.env.DB_STRING, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+});
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
