@@ -1,0 +1,28 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #536DFE !important;
+}
+
+a {
+    color: #ffffff
+}
+
+a:hover {
+    text-decoration: none;
+    color: #536DFE
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover,
+.form-control-borderless:active,
+.form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Kısa Kes - A URL Shortener</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-white">Kısa Kes - A URL Shortener</h1>
+        <div class="row justify-content-center my-5">
+            <div class="col">
+                <form action="/shortUrls" method="POST" class="card card-sm">
+                    <div class="card-body row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fa fa-link text-body"></i>
+                        </div>
+                        <div class="col">
+                            <input class="form-control form-control-lg form-control-borderless" required placeholder="Url" type="url" name="fullUrl" id="fullUrl">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-dark" type="submit">Kısa Kes!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <table class="table table-striped table-responsive-sm table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        Full URL
+                    </th>
+                    <th>
+                        Short URL
+                    </th>
+                    <th>
+                        Clicks
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shortUrls.forEach(shortUrl => { %>
+                    <tr>
+                        <td>
+                            <a href="<%= shortUrl.full %>">
+                                <%= shortUrl.full %>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="<%= shortUrl.short %>">
+                                <%= shortUrl.short %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= shortUrl.clicks %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
