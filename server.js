@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrl');
 const app = express();
 
-const dotenv = require('dotenv');
-
-dotenv.config();
+require('dotenv').config();
 
 mongoose.connect('process.env.DB_STRING', {
     useNewUrlParser: true,
