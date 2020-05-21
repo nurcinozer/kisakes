@@ -1,9 +1,14 @@
+require('dotenv').config()
+
 const express = require('express')
 const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-mongoose.connect('mongodb://url-user:abcd1234@ds041613.mlab.com:41613/heroku_1d7fmkjf', {
+const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env
+const mongoUri = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}`
+
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -33,4 +38,5 @@ app.get('/:shortUrl', async(req, res) => {
     res.redirect(shortUrl.full)
 })
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000)
+
