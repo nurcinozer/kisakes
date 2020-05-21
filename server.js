@@ -5,7 +5,7 @@ const app = express();
 
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_STRING, {
+mongoose.connect(process.env.DB_STRING_URL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
