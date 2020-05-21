@@ -1,2 +1,2 @@
 # Kısa Kes - A URL Shortener
-It is an URL shortener 🏹.
+🏹 It helps you to shorten your big URLs with NodeJS, Express and MongoDB.
