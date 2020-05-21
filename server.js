@@ -1,9 +1,9 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrl');
 const app = express();
-
-require('dotenv').config();
 
 mongoose.connect(process.env.DB_STRING_URL, {
     useUnifiedTopology: true,
